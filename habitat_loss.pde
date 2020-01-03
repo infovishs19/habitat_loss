@@ -3,6 +3,19 @@ int canvasH = 1080;
 PGraphics canvas;
 
 
+CellularAutomata amazonas;
+CellularAutomata roraima;
+CellularAutomata acre;
+CellularAutomata mattogrosso;
+CellularAutomata rondonia;
+CellularAutomata maranhao;
+CellularAutomata para;
+CellularAutomata tocantins;
+CellularAutomata amapa;
+
+PImage img;
+
+
 // Processing Standard Functions
 void settings() 
 {
@@ -13,7 +26,16 @@ void settings()
 
 void setup() {
   canvas = createGraphics(canvasW, canvasH, P3D);
-  
+    img = loadImage("Amazonas_Illustartion_3_Linien_1.png");
+    
+     float cellSizePixels = 10;
+     
+     
+     //x und y position des CellularAutomata
+    float amazonasWidthPixels = 1637;
+    float amazonasX = 1170;
+    float amazonasY = 0;
+    amazonas = new CellularAutomata("Amazonas", amazonasX, amazonasY, amazonasWidthPixels, height, cellSizePixels, 323);
 }
 
 void draw(){
