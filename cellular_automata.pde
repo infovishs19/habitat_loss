@@ -11,7 +11,7 @@ class CellularAutomata {
   int gridWidth;
   int gridHeight;
   float [][] grid;
-  float [][] newGrid;
+  //float [][] newGrid;
   
     //constructor(label, gridWidth, gridHeight, limit, col, colorger, colorger1, colornot) {
     CellularAutomata(String label, float x, float y, float pw, float ph, float cellSize, float limit) {
@@ -37,7 +37,7 @@ class CellularAutomata {
         this.grid = this.create2DArray(this.gridWidth, this.gridHeight);
 
         //a grid representing the next generation
-        this.newGrid = this.create2DArray(this.gridWidth, this.gridHeight);
+       // this.newGrid = this.create2DArray(this.gridWidth, this.gridHeight);
 
         println(this.grid);
     }
@@ -52,6 +52,7 @@ class CellularAutomata {
         //draw a rectangle to see bounds of CellularAutomata
         canvas.noFill();
         canvas.noStroke();
+        canvas.stroke(255);
         canvas.rect(0, 0, this.pixelWidth, this.pixelHeight);
 
         for (int i = 0; i < this.gridWidth; i++) {
@@ -101,7 +102,7 @@ class CellularAutomata {
                
                     }
                     else if (cellState == 0.1) {
-                        fill(239,121,83);
+                        canvas.fill(239,121,83);
 
                     }
                     else if (cellState == 0) {
@@ -110,10 +111,11 @@ class CellularAutomata {
 
                     }
                    
+                   canvas.fill(255);
                     canvas.rect(x, y, this.rectWidth, this.rectHeight);
                     canvas.textAlign(CENTER,CENTER);
                     canvas.noStroke();
-                    canvas.fill(0);
+                    //canvas.fill(0);
                 }
 
             }
@@ -127,7 +129,7 @@ class CellularAutomata {
         //limit simualtion to a limit number of cells
         int n = this.nrActiveCells();
         if (n >= this.limit) {
-            //console.log('limit reached: ', this.limit, n);
+            println("limit reached: £" +  this.limit + " , " +  n);
             return;
         }
         //create a two dimensional array for calculating the next generation
@@ -156,7 +158,12 @@ class CellularAutomata {
         }
 
         //copy the new generation to the actual grid
-        this.grid = nextGen;
+        for(int i=0; i<this.gridWidth; i++){
+          for(int j=0; j<this.gridHeight; j++){
+           this.grid[i][j] = nextGen[i][j];
+          }
+        }
+       
 
     }
 
@@ -208,7 +215,9 @@ class CellularAutomata {
 
     void mousePressed(float mx,float  my) {
         if (mx < this.x || mx > (this.x + this.pixelWidth) || my < this.y || my > (this.y + this.pixelHeight)) {
+           
             println(this.label + " mouse pressed: out of bounds ");
+             println("this.x " + this.x + " this.y " + this.y + " this.pixelWidth " + this.pixelWidth + " this.pixelHeight " + this.pixelHeight + " mx: " + mx + " my " + my);
             return;
         }
         println(this.label + " mouse captured");
