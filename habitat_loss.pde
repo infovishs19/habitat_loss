@@ -39,7 +39,59 @@ void setup() {
   float amazonasY = 0;
   amazonas = new CellularAutomata("Amazonas", amazonasX, amazonasY, amazonasWidthPixels, canvas.height, cellSizePixels, 323);
 
+
+float roraimaWidthPixels = 235;
+    float roraimaX = 2807;
+    float roraimaY = 0;
+    roraima = new CellularAutomata("Roraima", roraimaX, roraimaY, roraimaWidthPixels, canvas.height, cellSizePixels, 103);
+    
+    float acreWidthPixels = 173;
+    float acreX = 3042;
+    float acreY = 0;
+    acre = new CellularAutomata("Acre", acreX, acreY, acreWidthPixels, canvas.height, cellSizePixels, 129);
+
+    float mattogrossoWidthPixels = 947;
+    float mattogrossoX = 3215;
+    float mattogrossoY = 0;
+    mattogrosso = new CellularAutomata("Matto Grosso", mattogrossoX, mattogrossoY, mattogrossoWidthPixels, canvas.height, cellSizePixels, 1224);
+
+    float rondoniaWidthPixels = 251;
+    float rondoniaX = 4162;
+    float rondoniaY = 0;
+    rondonia = new CellularAutomata("Rondonia", rondoniaX, rondoniaY, rondoniaWidthPixels, canvas.height, cellSizePixels, 463);
+
+    float maranhaoWidthPixels = 348;
+    float maranhaoX = 4413;
+    float maranhaoY = 0;
+    maranhao = new CellularAutomata("Maranhao", maranhaoX, maranhaoY, maranhaoWidthPixels, canvas.height, cellSizePixels, 527);
+   
+    float paraWidthPixels = 1308;
+    float paraX = 4761;
+    float paraY = 0;
+    para = new CellularAutomata("Para", paraX, paraY, paraWidthPixels, canvas.height, cellSizePixels, 1508);
+
+    float tocantinsWidthPixels = 292;
+    float tocantinsX = 6069;
+    float tocantinsY = 0;
+    tocantins = new CellularAutomata("Tocantins", tocantinsX, tocantinsY, tocantinsWidthPixels, canvas.height, cellSizePixels, 201);
+
+
+    float amapaWidthPixels = 149;
+    float amapaX = 6361;
+    float amapaY = 0;
+    amapa = new CellularAutomata("Amapa", amapaX, amapaY, amapaWidthPixels, canvas.height, cellSizePixels, 35);
+
+
+
   regions.add(amazonas);  
+     regions.add(roraima);
+    regions.add(acre);
+    regions.add(mattogrosso);
+    regions.add(rondonia);
+    regions.add(maranhao);
+    regions.add(para);
+    regions.add(tocantins);
+    regions.add(amapa);
 
   frameRate(10);
 }
